@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Legal information — CSV Medic</title>
+  <meta name="description" content="Company details, trade mark notice and other legal information for CSV Medic.">
+  <link rel="canonical" href="{{APP_URL}}/legal">
+  <meta property="og:title" content="Legal information — CSV Medic">
+  <meta property="og:url" content="{{APP_URL}}/legal">
+  <meta property="og:site_name" content="CSV Medic">
+  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="/js/site.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="/" aria-label="CSV Medic home">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#0a8f6a"/><path d="M10 6.5h8.2l5.3 5.3V25a1.5 1.5 0 0 1-1.5 1.5H10A1.5 1.5 0 0 1 8.5 25V8A1.5 1.5 0 0 1 10 6.5z" fill="#fff"/><path d="M18 6.8V12h5.2" fill="none" stroke="#0a8f6a" stroke-width="1.4"/><path d="M16 15.2v7.2M12.4 18.8h7.2" stroke="#0a8f6a" stroke-width="2.4" stroke-linecap="round"/></svg>
+        CSV Medic
+      </a>
+      <nav class="nav nav-simple" aria-label="Main"><a href="/">Home</a><a href="/shopify-csv-errors">CSV errors</a><a class="btn btn-primary btn-sm" href="/app">Fix my CSV</a></nav>
+    </div>
+  </header>
+  <main class="prose legal" id="main">
+    <!-- {TOKENS} are filled in by the server from .env — see LEGAL_* settings in .env.example. -->
+    <h1>Legal information</h1>
+    <p class="updated">Last updated: 17 November 2026</p>
+
+    <h2>Company information</h2>
+    <p>This website is provided under the Electronic Commerce (EC Directive) Regulations 2002 and the Companies Act 2006 by:</p>
+    <dl class="facts">
+      <dt>Trading name</dt><dd>CSV Medic</dd>
+      <dt>Operated by</dt><dd>{{LEGAL_NAME}}</dd>
+      <dt>Company number</dt><dd>{{COMPANY_NUMBER}}</dd>
+      <dt>Registered office</dt><dd>{{REGISTERED_ADDRESS}}</dd>
+      <dt>Email</dt><dd>{{CONTACT_EMAIL_LINK}}</dd>
+      <dt>VAT number</dt><dd>{{VAT_NUMBER}}</dd>
+      <dt>ICO registration</dt><dd>{{ICO_NUMBER}}</dd>
+    </dl>
+
+    <h2>Trade marks</h2>
+    <p>CSV Medic and its logo are trade marks of {{LEGAL_NAME}}. Shopify is a trade mark of Shopify Inc. Other names and marks belong to their respective owners. CSV Medic is an independent product and is <strong>not affiliated with, endorsed by or sponsored by Shopify Inc.</strong> We refer to Shopify only to describe the file format our tool works with.</p>
+
+    <h2>Not professional advice</h2>
+    <p>The information on this website, including explanations of Shopify's import format, is general guidance to help you prepare product files. It is not legal, tax or other professional advice. Shopify's own documentation is the authoritative source for its import requirements.</p>
+
+    <h2>Links to other websites</h2>
+    <p>Where this website links to other sites, such as Shopify, Stripe or Citizens Advice, those links are for your information only. We have no control over those websites and are not responsible for their content.</p>
+
+    <h2 id="security">Reporting a security issue</h2>
+    <p>If you believe you've found a security vulnerability in CSV Medic, please email {{CONTACT_EMAIL_LINK}} with the details, and don't disclose it publicly until we've had a chance to fix it. Please don't access other people's data, disrupt the Service or run automated scans while testing. We won't take legal action against good-faith research that follows these guidelines. Our contact details are also published at <a href="/.well-known/security.txt">/.well-known/security.txt</a>.</p>
+
+    <h2>Our policies</h2>
+    <ul>
+      <li><a href="/terms">Terms of Service</a>: the agreement for using CSV Medic</li>
+      <li><a href="/privacy">Privacy Policy</a>: how we handle personal data</li>
+      <li><a href="/cookies">Cookie Policy</a>: the one cookie we use</li>
+      <li><a href="/refunds">Refund Policy</a>: what happens if something goes wrong</li>
+    </ul>
+
+    <nav class="legal-nav" aria-label="Legal documents">
+      <a href="/terms">Terms of Service</a><a href="/privacy">Privacy Policy</a><a href="/cookies">Cookie Policy</a><a href="/refunds">Refund Policy</a><a href="/legal">Legal information</a>
+    </nav>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>&copy; <span data-year>2026</span> {{LEGAL_NAME}}</span>
+      <nav aria-label="Footer"><a href="/shopify-csv-errors">CSV errors</a><a href="/shopify-csv-template">CSV template</a><a href="/terms">Terms</a><a href="/privacy">Privacy</a><a href="/cookies">Cookies</a><a href="/refunds">Refunds</a><a href="/legal">Legal</a></nav>
+    </div>
+  </footer>
+</body>
+</html>

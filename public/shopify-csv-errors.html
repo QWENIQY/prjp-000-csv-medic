@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shopify CSV Import Errors Explained &amp; Fixed (2026)</title>
+  <meta name="description" content="What every Shopify product CSV import error means and how to fix it: missing headers, illegal quoting, options not unique, price can't be blank and more.">
+  <link rel="canonical" href="{{APP_URL}}/shopify-csv-errors">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+  <meta name="theme-color" content="#0a8f6a">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="CSV Medic">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:title" content="Shopify CSV import errors: every message explained and fixed">
+  <meta property="og:description" content="Plain-English meanings and fixes for every Shopify product CSV import error — plus the silent problems Shopify won't warn you about.">
+  <meta property="og:url" content="{{APP_URL}}/shopify-csv-errors">
+  <meta property="og:image" content="{{APP_URL}}/img/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="article:modified_time" content="2026-11-17">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="/js/site.js" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "TechArticle",
+        "@id": "{{APP_URL}}/shopify-csv-errors#article",
+        "headline": "Shopify CSV import errors: what each one means and how to fix it",
+        "description": "Plain-English meanings and fixes for every Shopify product CSV import error message.",
+        "url": "{{APP_URL}}/shopify-csv-errors",
+        "datePublished": "2026-11-17",
+        "dateModified": "2026-11-17",
+        "inLanguage": "en-GB",
+        "image": "{{APP_URL}}/img/og-image.png",
+        "author": { "@id": "{{APP_URL}}/#organization" },
+        "publisher": { "@id": "{{APP_URL}}/#organization" },
+        "isPartOf": { "@id": "{{APP_URL}}/#website" },
+        "about": [{ "@type": "Thing", "name": "Shopify product CSV import" }],
+        "mainEntityOfPage": "{{APP_URL}}/shopify-csv-errors"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "CSV Medic", "item": "{{APP_URL}}/" },
+          { "@type": "ListItem", "position": 2, "name": "Shopify CSV import errors", "item": "{{APP_URL}}/shopify-csv-errors" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How do I fix my CSV file for Shopify?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Make sure the file is saved as UTF-8 with commas between columns, the first row matches Shopify's column headers exactly, every product has a Title and a URL handle, prices are plain numbers without currency symbols, every variant has unique option values, and image URLs are public https:// links. CSV Medic checks and fixes all of these automatically: upload your file to CSV Medic, review the changes and download a clean file." }
+          },
+          {
+            "@type": "Question",
+            "name": "Why does Shopify say 'Invalid CSV header: missing headers'?",
+            "acceptedAnswer": { "@type": "Answer", "text": "The first row of your file doesn't match Shopify's column names — usually because a column was renamed (for example 'Name' instead of 'Title'), the header isn't on row 1, there are trailing spaces, or the file uses semicolons instead of commas. Rename the columns to Shopify's exact headers and save as comma-separated UTF-8." }
+          },
+          {
+            "@type": "Question",
+            "name": "What does 'Illegal quoting on line' mean in Shopify?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Shopify couldn't read a quoted cell on that line. It's usually caused by a file that isn't UTF-8, curly quotes inserted by a spreadsheet, or a double quote inside a cell that hasn't been escaped as two double quotes. Re-save as CSV UTF-8 and fix the quotes on the flagged line." }
+          },
+          {
+            "@type": "Question",
+            "name": "What does 'Validation failed: options are not unique' mean?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Two variants of the same product have identical option values (for example two rows with Size = Small), sometimes only differing by an extra space. Each variant needs a unique combination of Option1, Option2 and Option3 values." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="/" aria-label="CSV Medic home">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#0a8f6a"/><path d="M10 6.5h8.2l5.3 5.3V25a1.5 1.5 0 0 1-1.5 1.5H10A1.5 1.5 0 0 1 8.5 25V8A1.5 1.5 0 0 1 10 6.5z" fill="#fff"/><path d="M18 6.8V12h5.2" fill="none" stroke="#0a8f6a" stroke-width="1.4"/><path d="M16 15.2v7.2M12.4 18.8h7.2" stroke="#0a8f6a" stroke-width="2.4" stroke-linecap="round"/></svg>
+        CSV Medic
+      </a>
+      <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <nav class="nav" id="site-nav" aria-label="Main">
+        <a href="/">Home</a>
+        <a href="/shopify-csv-errors" aria-current="page">CSV errors</a>
+        <a href="/shopify-csv-template">CSV template</a>
+        <a href="/#pricing">Pricing</a>
+        <a class="btn btn-primary btn-sm" href="/app">Fix my CSV</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="prose guide" id="main">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">CSV Medic</a> <span aria-hidden="true">/</span> <span>Shopify CSV import errors</span></nav>
+    <h1>Shopify CSV import errors: what each one means and how to fix it</h1>
+    <p class="updated">Updated 17 November 2026 · By the CSV Medic team at QWENIQY</p>
+
+    <div class="answer-box">
+      <p><strong>Short answer:</strong> most Shopify CSV import errors come from six things. These are a header row that doesn't match Shopify's column names, a file that isn't saved as UTF-8 with commas, quotes that Excel has mangled, variants with missing or duplicate option values, prices with currency symbols or blanks, and image links that aren't public <code>https://</code> URLs. Find your exact error message below for the fix. Or <a href="/app">upload your file to CSV Medic</a>, which repairs most of these automatically and points out the rest.</p>
+    </div>
+
+    <p>Shopify only tells you <em>that</em> a line failed, and often in confusing terms ("Incorrect header check" has nothing to do with headers). This guide explains every product CSV import error in plain English. For each one we say whether <a href="/">CSV Medic</a> fixes it automatically, flags it so you can fix it, or can't help, in which case we say what to do instead. Error wording is taken from <a href="https://help.shopify.com/en/manual/products/import-export/common-import-issues" rel="noopener">Shopify's help centre</a>.</p>
+
+    <p class="legend"><span class="badge auto">Fixed automatically</span> <span class="badge flag">Flagged for you to fix</span> <span class="badge manual">Fix it yourself</span></p>
+
+    <nav class="toc" aria-label="Errors on this page">
+      <strong>Jump to your error</strong>
+      <ol>
+        <li><a href="#missing-headers">Invalid CSV header: missing headers</a></li>
+        <li><a href="#illegal-quoting">Illegal quoting on line</a></li>
+        <li><a href="#stray-quote">Missing or stray quote on line</a></li>
+        <li><a href="#strange-characters">Strange characters (Ã©, â€™)</a></li>
+        <li><a href="#choose-column-headings">"Choose column headings" window</a></li>
+        <li><a href="#handle-exists">Handle already exists</a></li>
+        <li><a href="#no-product-data">Did not contain product data</a></li>
+        <li><a href="#options-not-unique">Options are not unique</a></li>
+        <li><a href="#default-title">Default Title already exists</a></li>
+        <li><a href="#price-blank">Price can't be blank</a></li>
+        <li><a href="#inventory-policy">Inventory policy is not included in the list</a></li>
+        <li><a href="#inventory-blank">Inventory quantity can't be blank</a></li>
+        <li><a href="#inventory-nan">Inventory quantity is not a number</a></li>
+        <li><a href="#fulfillment-blank">Fulfillment service can't be blank</a></li>
+        <li><a href="#getaddrinfo">getaddrinfo: nodename nor servname provided</a></li>
+        <li><a href="#image-download">Error while trying to download the image</a></li>
+        <li><a href="#incorrect-header-check">Incorrect header check</a></li>
+        <li><a href="#megapixel">Image exceeds the 20 megapixel limit</a></li>
+        <li><a href="#product-category">Not a valid product category</a></li>
+        <li><a href="#product-reference">Value must be a valid product reference</a></li>
+        <li><a href="#variant-limit">Daily variant creation limit reached</a></li>
+        <li><a href="#job-in-progress">Import job already in progress</a></li>
+        <li><a href="#silent-problems">Silent problems Shopify won't warn you about</a></li>
+      </ol>
+    </nav>
+
+    <section class="err" id="missing-headers">
+      <h2><span class="msg">Invalid CSV header: missing headers</span></h2>
+      <span class="badge auto">Fixed automatically</span>
+      <p><strong>What it means:</strong> the first row of your file doesn't match Shopify's column names, so Shopify can't find a column it needs (usually <code>Title</code>).</p>
+      <p><strong>Common causes:</strong> columns called "Name", "Price" or "SKU" instead of Shopify's names. Other causes are a header that isn't on row 1, trailing spaces after the last header, or a file separated by semicolons (common when Excel is set to a European locale).</p>
+      <p><strong>How to fix it:</strong> rename each column to Shopify's exact header and make sure the header row is the very first line. Save the file as comma-separated UTF-8. See our <a href="/shopify-csv-template">Shopify CSV template guide</a> for every column name.</p>
+      <p class="medic"><strong>CSV Medic:</strong> recognises over 100 common alternative column names ("Name", "Description", "Price", "SKU", "Qty", "Image URL", "RRP" and more) and renames them to Shopify's headers. It also converts semicolon and tab-separated files to commas and adds a missing Handle column.</p>
+    </section>
+
+    <section class="err" id="illegal-quoting">
+      <h2><span class="msg">Illegal quoting on line</span></h2>
+      <span class="badge auto">Fixed automatically</span>
+      <p><strong>What it means:</strong> Shopify couldn't read a quoted cell on that line.</p>
+      <p><strong>Common causes:</strong> the file isn't saved as UTF-8. Another cause is a double quote inside a cell (like <code>12" pizza stone</code>) that isn't escaped as two double quotes (<code>""</code>). A third is curly “smart” quotes added by a spreadsheet.</p>
+      <p><strong>How to fix it:</strong> re-save as <em>CSV UTF-8</em>. In a plain text editor, go to the flagged line and make sure each quote inside a cell is doubled, and that the cell itself is wrapped in straight quotes.</p>
+      <p class="medic"><strong>CSV Medic:</strong> reads the file however it was saved (UTF-8, UTF-16 or Windows/Excel encoding). It then writes every cell back out with correct, standard quoting, so this error can't happen in the fixed file.</p>
+    </section>
+
+    <section class="err" id="stray-quote">
+      <h2><span class="msg">Missing or stray quote on line</span></h2>
+      <span class="badge auto">Fixed automatically</span>
+      <p><strong>What it means:</strong> a cell opens with a quote but never closes it, so Shopify reads the rest of the file as one giant cell.</p>
+      <p><strong>How to fix it:</strong> open the file in a text editor, go to the line Shopify names, and add the missing closing quote or remove the stray one.</p>
+      <p class="medic"><strong>CSV Medic:</strong> re-quotes every cell correctly. If the file ends inside an unclosed quote, it warns you to check the last row, because some data may be missing from the original.</p>
+    </section>
+
+    <section class="err" id="strange-characters">
+      <h2><span class="msg">Strange characters like "Ã©", "â€™" or "Â£"</span></h2>
+      <span class="badge auto">Fixed automatically</span>
+      <p><strong>What it means:</strong> text was saved in one encoding and read in another. The result is that "Café" becomes "CafÃ©" and apostrophes turn into "â€™". It usually happens when a file passes through Excel on Windows.</p>
+      <p><strong>How to fix it:</strong> save the file as UTF-8. Text that is already garbled has to be corrected by hand.</p>
+      <p class="medic"><strong>CSV Medic:</strong> converts the file to UTF-8 <em>and</em> repairs text that is already garbled, turning "CafÃ©" back into "Café". It also removes invisible zero-width characters that break handles and option values.</p>
+    </section>
+
+    <section class="err" id="choose-column-headings">
+      <h2><span class="msg">A "Choose column headings" window appears</span></h2>
+      <span class="badge auto">Fixed automatically</span>
+      <p><strong>What it means:</strong> Shopify didn't recognise some of your headers and is asking you to match them by hand.</p>
+      <p class="medic"><strong>CSV Medic:</strong> renames your columns to Shopify's headers, so the file imports without this step.</p>
+    </section>
+
+    <section class="err" id="handle-exists">
+      <h2><span class="msg">Ignored line #-## because handle `example` already exists</span></h2>
+      <span class="badge flag">Flagged for you to fix</span>
+      <p><strong>What it means:</strong> two different products in your file use the same handle. Shopify treats rows with the same handle as one product, so the second one is ignored.</p>
+      <p><strong>How to fix it:</strong> give each product its own handle. Rows that really are variants of the same product should share a handle, but should leave Title blank on every row after the first.</p>
+      <p class="medic"><strong>CSV Medic:</strong> creates missing handles from titles and reformats invalid ones. It flags any handle that is shared by products with <em>different</em> titles, so you can decide whether they're variants or separate products.</p>
+    </section>
+
+    <section class="err" id="no-product-data">
+      <h2><span class="msg">Ignored line #-## because it did not contain product data</span></h2>
+      <span class="badge flag">Partly fixed, rest flagged</span>
+      <p><strong>What it means:</strong> the first row for a handle has no Title, so Shopify can't create the product.</p>
+      <p><strong>How to fix it:</strong> put the Title (and description, vendor and tags) on the <em>first</em> row of each product.</p>
+      <p class="medic"><strong>CSV Medic:</strong> if the title is on a later row, it moves it up to the first row. If a product has no title at all, it flags it. It also fills in missing handles on variant and image rows so they stay attached to the right product.</p>
+    </section>
+
+    <section class="err" id="options-not-unique">
+      <h2><span class="msg">Validation failed: options are not unique</span></h2>
+      <span class="badge flag">Flagged for you to fix</span>
+      <p><strong>What it means:</strong> two variants of the same product have exactly the same option values (for example two rows with Size = "Small"). Sometimes the only difference is an extra space.</p>
+      <p><strong>How to fix it:</strong> sort by handle, find the duplicate pair, and either change one option value or delete the duplicate row.</p>
+      <p class="medic"><strong>CSV Medic:</strong> trims stray spaces from every option value, removes rows that are exact duplicates, and points to the exact pair of rows that still clash.</p>
+    </section>
+
+    <section class="err" id="default-title">
+      <h2><span class="msg">Validation failed: The variant 'Default Title' already exists</span></h2>
+      <span class="badge flag">Partly fixed, rest flagged</span>
+      <p><strong>What it means:</strong> a product has more than one variant row but no option values, so Shopify tries to create its default variant twice.</p>
+      <p><strong>How to fix it:</strong> give every variant a real option name and value (like Size / Small). For products with only one variant, use <code>Title</code> / <code>Default Title</code>.</p>
+      <p class="medic"><strong>CSV Medic:</strong> sets <code>Title</code> / <code>Default Title</code> on single-variant products. It flags products that have several variant rows but no option values, which are often accidental duplicates.</p>
+    </section>
+
+    <section class="err" id="price-blank">
+      <h2><span class="msg">Validation failed: price can't be blank</span></h2>
+      <span class="badge flag">Flagged for you to fix</span>
+      <p><strong>What it means:</strong> a variant row has no price.</p>
+      <p><strong>How to fix it:</strong> fill in the price on every variant row, as a plain number like <code>19.99</code>.</p>
+      <p class="medic"><strong>CSV Medic:</strong> flags every variant with a missing price. It also cleans the prices you do have: it removes £, $ and €, converts European decimals like "12,99" to "12.99", and removes thousand separators, so "1,299.00" becomes "1299.00".</p>
+    </section>
+
+    <section class="err" id="inventory-policy">
+      <h2><span class="msg">Inventory policy is not included in the list</span></h2>
+      <span class="badge auto">Fixed automatically</span>
+      <p><strong>What it means:</strong> the inventory policy column ("Continue selling when out of stock") only accepts <code>deny</code> or <code>continue</code>, in lowercase.</p>
+      <p class="medic"><strong>CSV Medic:</strong> converts values like "Deny", "no", "FALSE" or "stop" to <code>deny</code>, and "yes", "TRUE" or "allow" to <code>continue</code>. It sets blank values on variant rows to <code>deny</code>, which is Shopify's default.</p>
+    </section>
+
+    <section class="err" id="inventory-blank">
+      <h2><span class="msg">Inventory quantity can't be blank</span></h2>
+      <span class="badge auto">Fixed automatically</span>
+      <p><strong>What it means:</strong> a variant is set to be tracked by Shopify but has an empty quantity.</p>
+      <p><strong>How to fix it:</strong> enter <code>0</code>, or leave the Inventory tracker blank if you don't track stock.</p>
+      <p class="medic"><strong>CSV Medic:</strong> sets blank quantities on tracked variants to <code>0</code>.</p>
+    </section>
+
+    <section class="err" id="inventory-nan">
+      <h2><span class="msg">Inventory quantity is not a number</span></h2>
+      <span class="badge auto">Fixed automatically</span>
+      <p><strong>What it means:</strong> the quantity contains text, separators or decimals, such as "1,000", "10.0" or "In stock".</p>
+      <p class="medic"><strong>CSV Medic:</strong> converts "1,000" and "10.0" into whole numbers and flags text it can't safely convert.</p>
+    </section>
+
+    <section class="err" id="fulfillment-blank">
+      <h2><span class="msg">Fulfillment service can't be blank</span></h2>
+      <span class="badge auto">Fixed automatically</span>
+      <p><strong>What it means:</strong> a variant has no fulfillment service. If you ship orders yourself, the value should be <code>manual</code>.</p>
+      <p class="medic"><strong>CSV Medic:</strong> sets blank fulfillment services on variant rows to <code>manual</code> and lowercases values like "Manual".</p>
+    </section>
+
+    <section class="err" id="getaddrinfo">
+      <h2><span class="msg">Validation failed: getaddrinfo: nodename nor servname provided, or not known</span></h2>
+      <span class="badge auto">Fixed automatically</span>
+      <p><strong>What it means:</strong> an image URL couldn't be resolved, almost always because it's missing <code>https://</code> at the start or has a leading space.</p>
+      <p class="medic"><strong>CSV Medic:</strong> adds <code>https://</code> to links like <code>cdn.example.com/image.jpg</code> and <code>//cdn.example.com/image.jpg</code>, trims spaces and encodes spaces inside URLs.</p>
+    </section>
+
+    <section class="err" id="image-download">
+      <h2><span class="msg">Validation failed: An error occurred while trying to download the image</span></h2>
+      <span class="badge flag">Partly fixed, rest flagged</span>
+      <p><strong>What it means:</strong> Shopify reached the URL but didn't get an image back. That happens with a share page instead of a direct image link, an expired or private link, a file path on your own computer, or a site that blocks hotlinking.</p>
+      <p><strong>How to fix it:</strong> use a direct link to the image file that opens in a private browser window without logging in.</p>
+      <p class="medic"><strong>CSV Medic:</strong> converts Google Drive and Dropbox share links into direct image links. It flags local file paths like <code>C:\Users\…\photo.jpg</code>, which Shopify can never download. It can't detect expired or blocked links, so test any image that still fails in a private window.</p>
+    </section>
+
+    <section class="err" id="incorrect-header-check">
+      <h2><span class="msg">Incorrect header check</span></h2>
+      <span class="badge manual">Fix it yourself</span>
+      <p><strong>What it means:</strong> despite the name, this is <em>not</em> about your CSV headers. The image on that line is damaged or isn't really the file type it claims to be.</p>
+      <p><strong>How to fix it:</strong> clear the image URL on that line to confirm. Then re-save the image as a normal JPEG or PNG and host it somewhere else.</p>
+    </section>
+
+    <section class="err" id="megapixel">
+      <h2><span class="msg">Validation failed: The uploaded image exceeds the 20 megapixel limit</span></h2>
+      <span class="badge manual">Fix it yourself</span>
+      <p><strong>What it means:</strong> the image is too large. Its width × height is over Shopify's limit.</p>
+      <p><strong>How to fix it:</strong> resize the image (for example to 4000 × 4000 px or smaller), re-upload it and update the URL.</p>
+    </section>
+
+    <section class="err" id="product-category">
+      <h2><span class="msg">Not a valid product category</span></h2>
+      <span class="badge manual">Fix it yourself</span>
+      <p><strong>What it means:</strong> the Product category doesn't exactly match Shopify's Standard Product Taxonomy.</p>
+      <p><strong>How to fix it:</strong> use the full category path (e.g. <code>Home &amp; Garden &gt; Linens &amp; Bedding &gt; Bedding &gt; Bed Sheets</code>) or the category ID (e.g. <code>hg-15-1-2</code>). The easiest source is a product export from your own store. You can also leave the column blank and set categories in Shopify afterwards.</p>
+    </section>
+
+    <section class="err" id="product-reference">
+      <h2><span class="msg">Validation failed: Value must be a valid product reference</span></h2>
+      <span class="badge manual">Fix it yourself</span>
+      <p><strong>What it means:</strong> a metafield points to a product that doesn't exist in your store yet.</p>
+      <p><strong>How to fix it:</strong> import the products first without those metafield values. Then run a second import that overwrites the products and adds the references.</p>
+    </section>
+
+    <section class="err" id="variant-limit">
+      <h2><span class="msg">Daily variant creation limit reached, try again</span></h2>
+      <span class="badge manual">Fix it yourself</span>
+      <p><strong>What it means:</strong> stores with 500,000 or more variants (excluding Shopify Plus) can create up to 10,000 new variants per 24 hours through CSV imports.</p>
+      <p><strong>How to fix it:</strong> split the file into batches of fewer than 10,000 new variants and import one batch per day.</p>
+    </section>
+
+    <section class="err" id="job-in-progress">
+      <h2><span class="msg">Import job already in progress. Please wait until current one is finished</span></h2>
+      <span class="badge manual">Fix it yourself</span>
+      <p><strong>What it means:</strong> Shopify runs one import at a time. Wait for the email confirming the current import has finished, then upload again.</p>
+    </section>
+
+    <section class="err" id="silent-problems">
+      <h2>Silent problems Shopify won't warn you about</h2>
+      <p>Some mistakes import "successfully" but quietly damage your catalogue. CSV Medic checks for these too:</p>
+      <ul>
+        <li><strong>Barcodes in scientific notation</strong>: Excel turns <code>5012345678900</code> into <code>5.01235E+12</code>, permanently losing digits. <span class="badge flag">Flagged</span></li>
+        <li><strong>Compare-at prices that aren't higher than the price</strong>: the product never shows as on sale. <span class="badge auto">Cleared automatically</span></li>
+        <li><strong>Weights entered in kilograms in the grams column</strong>: "0.5" becomes 0 g, so shipping rates are wrong. <span class="badge flag">Flagged</span></li>
+        <li><strong>Excel's leading apostrophes and ".0" endings</strong> on SKUs and barcodes. <span class="badge auto">Removed automatically</span></li>
+        <li><strong>Duplicate SKUs</strong>, which confuse inventory and order tracking. <span class="badge flag">Flagged</span></li>
+        <li><strong>Duplicate and messy tags</strong>, such as "tops, mens , tops". <span class="badge auto">Cleaned automatically</span></li>
+        <li><strong>SEO titles over 70 characters and descriptions over 320</strong>, which get cut off in search results. <span class="badge flag">Flagged</span></li>
+        <li><strong>true/false columns written as yes/no/Y/1</strong>. <span class="badge auto">Normalised automatically</span></li>
+      </ul>
+    </section>
+
+    <section class="err" id="checklist">
+      <h2>Before you import: a 60-second checklist</h2>
+      <ol>
+        <li>Saved as <strong>CSV UTF-8</strong>, comma-separated, under 15 MB.</li>
+        <li>Row 1 is the header row and uses Shopify's exact column names.</li>
+        <li>Every product's first row has a Title. Every row has the product's URL handle.</li>
+        <li>Every variant has a price and a unique combination of option values.</li>
+        <li>Prices are plain numbers: no £/$/€, no thousand separators.</li>
+        <li>Image URLs are public, direct <code>https://</code> links.</li>
+        <li>You have a backup of your current products (Products → Export) before overwriting.</li>
+      </ol>
+    </section>
+
+    <div class="cta-band guide-cta">
+      <h2>Let CSV Medic check all of this for you</h2>
+      <p>Upload your Shopify product CSV and see every problem fixed or flagged in seconds. Your first file each day is free.</p>
+      <a class="btn btn-primary btn-lg" href="/app">Fix my CSV now</a>
+    </div>
+
+    <h2 id="faq">Frequently asked questions</h2>
+    <div class="faq">
+      <details>
+        <summary>How do I fix my CSV file for Shopify?</summary>
+        <p>Make sure the file is saved as UTF-8 with commas between columns, and that the first row matches Shopify's column headers exactly. Every product needs a Title and a URL handle. Prices must be plain numbers without currency symbols, every variant needs unique option values, and image URLs must be public https:// links. CSV Medic checks and fixes all of these automatically: <a href="/app">upload your file</a>, review the changes and download a clean file.</p>
+      </details>
+      <details>
+        <summary>Why does Shopify say "Invalid CSV header: missing headers"?</summary>
+        <p>The first row of your file doesn't match Shopify's column names. Usually a column was renamed (for example "Name" instead of "Title"), the header isn't on row 1, there are trailing spaces, or the file uses semicolons instead of commas. Rename the columns to Shopify's exact headers and save as comma-separated UTF-8.</p>
+      </details>
+      <details>
+        <summary>What does "Illegal quoting on line" mean in Shopify?</summary>
+        <p>Shopify couldn't read a quoted cell on that line. It's usually caused by a file that isn't UTF-8, curly quotes inserted by a spreadsheet, or a double quote inside a cell that hasn't been escaped as two double quotes. Re-save as CSV UTF-8 and fix the quotes on the flagged line.</p>
+      </details>
+      <details>
+        <summary>What does "Validation failed: options are not unique" mean?</summary>
+        <p>Two variants of the same product have identical option values (for example two rows with Size = Small), sometimes differing only by an extra space. Each variant needs a unique combination of Option1, Option2 and Option3 values.</p>
+      </details>
+    </div>
+
+    <p class="related">Related: <a href="/shopify-csv-template">Shopify product CSV template: every column explained</a></p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>&copy; <span data-year>2026</span> QWENIQY. CSV Medic is not affiliated with Shopify Inc.</span>
+      <nav aria-label="Footer"><a href="/shopify-csv-errors">CSV errors</a><a href="/shopify-csv-template">CSV template</a><a href="/terms">Terms</a><a href="/privacy">Privacy</a><a href="/cookies">Cookies</a><a href="/refunds">Refunds</a><a href="/legal">Legal</a></nav>
+    </div>
+  </footer>
+</body>
+</html>

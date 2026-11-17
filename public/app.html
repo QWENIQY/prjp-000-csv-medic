@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Upload &amp; Fix Your Shopify CSV Online — Free | CSV Medic</title>
+  <meta name="description" content="Upload your Shopify product CSV and fix column names, encoding, handles, prices, variants and image links in seconds. 1 free download a day.">
+  <link rel="canonical" href="{{APP_URL}}/app">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CSV Medic">
+  <meta property="og:title" content="Fix your Shopify CSV online — CSV Medic">
+  <meta property="og:description" content="Upload a Shopify product CSV and get a clean file that imports first time.">
+  <meta property="og:url" content="{{APP_URL}}/app">
+  <meta property="og:image" content="{{APP_URL}}/img/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0a8f6a">
+  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="/js/site.js" defer></script>
+  <script src="/js/editor.js" defer></script>
+</head>
+<body class="app-body">
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="/" aria-label="CSV Medic home">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#0a8f6a"/><path d="M10 6.5h8.2l5.3 5.3V25a1.5 1.5 0 0 1-1.5 1.5H10A1.5 1.5 0 0 1 8.5 25V8A1.5 1.5 0 0 1 10 6.5z" fill="#fff"/><path d="M18 6.8V12h5.2" fill="none" stroke="#0a8f6a" stroke-width="1.4"/><path d="M16 15.2v7.2M12.4 18.8h7.2" stroke="#0a8f6a" stroke-width="2.4" stroke-linecap="round"/></svg>
+        CSV Medic
+      </a>
+      <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <nav class="nav" id="site-nav" aria-label="Main">
+        <a href="/">Home</a>
+        <a href="/#fixes">What it fixes</a>
+        <a href="/#pricing">Pricing</a>
+        <a href="/#faq">Help</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="app-main" id="main">
+    <!-- Upload view -->
+    <section class="dropzone-wrap" id="upload-view">
+      <div>
+        <div class="dropzone" id="dropzone">
+          <div class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m17 8-5-5-5 5"/><path d="M12 3v12"/></svg></div>
+          <h1 class="h2">Fix your Shopify product CSV</h1>
+          <p>Drag and drop your file here, or choose it from your computer. We'll fix everything we can and show you every change.</p>
+          <div class="actions">
+            <label class="btn btn-primary btn-lg" for="file-input">Choose CSV file</label>
+            <button class="btn btn-secondary btn-lg" type="button" id="sample-btn">Try a sample file</button>
+          </div>
+          <input type="file" id="file-input" accept=".csv,.tsv,.txt,text/csv,text/plain" class="sr-only">
+          <p class="fineprint">CSV, TSV or TXT up to 15 MB · Reviewing &amp; editing is free · <span id="pricing-line">1 free download a day, then £5 per file</span></p>
+          <p class="fineprint">By uploading a file you agree to our <a href="/terms">Terms of Service</a> and <a href="/privacy">Privacy Policy</a>.</p>
+        </div>
+        <div class="alert alert-error" id="upload-error" role="alert" hidden></div>
+      </div>
+    </section>
+
+    <!-- Editor view -->
+    <section class="workspace" id="editor-view" hidden>
+      <div class="grid-pane">
+        <div class="toolbar" role="toolbar" aria-label="Editor tools">
+          <span class="file-name" id="file-name"></span>
+          <span class="sep" aria-hidden="true"></span>
+          <input type="search" id="search" placeholder="Search rows…" aria-label="Search rows">
+          <label class="toggle"><input type="checkbox" id="issues-only"> Rows with problems only</label>
+          <span class="spacer"></span>
+          <button class="btn btn-ghost btn-sm" type="button" id="undo-btn" disabled title="Undo (Ctrl/Cmd+Z)">Undo</button>
+          <button class="btn btn-ghost btn-sm" type="button" id="add-row-btn" title="Insert a row below the selected row">Add row</button>
+          <button class="btn btn-ghost btn-sm" type="button" id="del-row-btn" title="Delete the selected row">Delete row</button>
+          <button class="btn btn-secondary btn-sm" type="button" id="recheck-btn">Re-check</button>
+          <button class="btn btn-ghost btn-sm" type="button" id="new-file-btn">New file</button>
+        </div>
+        <div class="grid-scroll" id="grid-scroll" tabindex="0" role="grid" aria-label="CSV data">
+          <div class="grid-header" id="grid-header" role="row"></div>
+          <div class="grid-body" id="grid-body"></div>
+        </div>
+        <div class="statusbar">
+          <span id="status-rows"></span>
+          <span id="status-cell"></span>
+          <span class="spacer"></span>
+          <span>Double-click or press Enter to edit · Arrow keys to move</span>
+        </div>
+      </div>
+
+      <aside class="side-pane" aria-label="Issues">
+        <div class="side-head">
+          <div class="summary-chips">
+            <button class="chip fixed" type="button" data-sev="fixed" aria-pressed="false"><b id="count-fixed">0</b><span>Fixed</span></button>
+            <button class="chip warning" type="button" data-sev="warning" aria-pressed="false"><b id="count-warning">0</b><span>Warnings</span></button>
+            <button class="chip error" type="button" data-sev="error" aria-pressed="false"><b id="count-error">0</b><span>Need you</span></button>
+          </div>
+          <div class="alert alert-info" id="side-hint">Click any issue to jump to the cell. Red items need a decision from you.</div>
+        </div>
+        <div class="side-scroll" id="side-scroll">
+          <div class="section-label">Summary</div>
+          <ul class="group-list" id="group-list"></ul>
+          <div class="section-label" id="details-label">All changes &amp; issues</div>
+          <ul class="issue-list" id="issue-list"></ul>
+        </div>
+        <div class="side-foot">
+          <button class="btn btn-primary btn-lg btn-block" type="button" id="download-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>
+            Download fixed CSV
+          </button>
+          <p id="download-note">1 free download a day · then £5 per file</p>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <div class="overlay" id="loading" hidden>
+    <div class="loading-box"><div class="spinner"></div><span id="loading-text">Fixing your CSV…</span></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,10 @@
+Name,Description,brand,Price,RRP,SKU,Barcode,Qty,Weight (grams),Published,Status,Image,Tags,Option1 Name,Option1 Value
+"Organic CafÃ© Blend","<p>Rich, smooth coffee â€“ roasted in small batches.</p>",Bean & Co,"£12,99",£10.00,'CB-001,5012345678900.0,25,250g,yes,Live,drive.google.com/file/d/1a2B3c4D5e/view,"coffee; organic; coffee",,
+Men's Classic Tee,<p>100% cotton tee.</p>,Threadly,"$1,299.00",,TEE-1,,10,180,Y,active,https://cdn.example.com/images/my tee.jpg,"tops, mens , tops",Size,Small
+,,,"$1,299.00",,TEE-2,,8,180,,,,,,Medium
+,,,1299,,TEE-3,,0,180,,,,,,Large
+  Leather Wallet  ,<p>Hand-stitched.</p>,Hide & Seek,49.5 GBP,59.99,WAL-01,1.23457E+12,abc,0.12,TRUE,Hidden,//cdn.example.com/wallet.jpg,leather|gifts,,
+Ceramic Mug,<p>Holds 350ml.</p>,Kiln Works,8.00,8.00,MUG-1,,40,400,no,draft,C:\Users\me\Pictures\mug.jpg,kitchen,,
+Ceramic Mug,<p>Holds 350ml.</p>,Kiln Works,8.00,,MUG-1,,40,400,no,draft,,kitchen,,
+
+Gift Card,,CSV Medic Store,25,,GIFT-25,,,,yes,active,,gift,,

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cookie Policy — CSV Medic</title>
+  <meta name="description" content="The cookies CSV Medic uses and why.">
+  <link rel="canonical" href="{{APP_URL}}/cookies">
+  <meta property="og:title" content="Cookie Policy — CSV Medic">
+  <meta property="og:url" content="{{APP_URL}}/cookies">
+  <meta property="og:site_name" content="CSV Medic">
+  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="/js/site.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="/" aria-label="CSV Medic home">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#0a8f6a"/><path d="M10 6.5h8.2l5.3 5.3V25a1.5 1.5 0 0 1-1.5 1.5H10A1.5 1.5 0 0 1 8.5 25V8A1.5 1.5 0 0 1 10 6.5z" fill="#fff"/><path d="M18 6.8V12h5.2" fill="none" stroke="#0a8f6a" stroke-width="1.4"/><path d="M16 15.2v7.2M12.4 18.8h7.2" stroke="#0a8f6a" stroke-width="2.4" stroke-linecap="round"/></svg>
+        CSV Medic
+      </a>
+      <nav class="nav nav-simple" aria-label="Main"><a href="/">Home</a><a href="/shopify-csv-errors">CSV errors</a><a class="btn btn-primary btn-sm" href="/app">Fix my CSV</a></nav>
+    </div>
+  </header>
+  <main class="prose legal" id="main">
+    <!-- {TOKENS} are filled in by the server from .env — see LEGAL_* settings in .env.example. -->
+    <h1>Cookie Policy</h1>
+    <p class="updated">Last updated: 17 November 2026</p>
+
+    <p>This policy explains how CSV Medic, operated by {{LEGAL_NAME}}, uses cookies and similar technologies, as required by the Privacy and Electronic Communications Regulations 2003 (PECR).</p>
+
+    <h2>The short version</h2>
+    <p>We use <strong>one cookie</strong>. It is strictly necessary for the Service to work. We do <strong>not</strong> use analytics, advertising or tracking cookies, and we don't let third parties set cookies on our website. Because our cookie is strictly necessary, the law doesn't require us to ask for your consent, which is why you don't see a cookie banner.</p>
+
+    <h2>Cookies we use</h2>
+    <div class="table-wrap">
+    <table>
+      <thead><tr><th>Name</th><th>Set by</th><th>Purpose</th><th>Duration</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><code>cm_did</code></td>
+          <td>CSV Medic (first-party)</td>
+          <td>Holds a random ID that links the files you prepare to your browser. This means only you can download them. It also applies the free daily download allowance. It contains no personal details.</td>
+          <td>400 days</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    <p>The cookie is <code>HttpOnly</code>, which means scripts on the page can't read it. It is only sent over secure connections, and it is never shared with other websites.</p>
+
+    <h2>Payments</h2>
+    <p>When you choose to pay, you are taken to Stripe's secure checkout page at checkout.stripe.com. Stripe sets its own cookies there, which are needed for fraud prevention and to process your payment. These are covered by <a href="https://stripe.com/gb/legal/cookies-policy" rel="noopener">Stripe's cookie policy</a>.</p>
+
+    <h2>Managing cookies</h2>
+    <p>You can delete or block cookies in your browser settings. If you block our cookie, the editor will still work. However, you may not be able to download fixed files, because we won't be able to confirm that a file belongs to you. Deleting the cookie does not reset the free download allowance.</p>
+
+    <h2>Changes</h2>
+    <p>If we ever add non-essential cookies (for example analytics), we will update this policy and ask for your consent before setting them.</p>
+
+    <h2>Contact</h2>
+    <p>Questions? Email {{CONTACT_EMAIL_LINK}}.</p>
+
+    <nav class="legal-nav" aria-label="Legal documents">
+      <a href="/terms">Terms of Service</a><a href="/privacy">Privacy Policy</a><a href="/cookies">Cookie Policy</a><a href="/refunds">Refund Policy</a><a href="/legal">Legal information</a>
+    </nav>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>&copy; <span data-year>2026</span> {{LEGAL_NAME}}</span>
+      <nav aria-label="Footer"><a href="/shopify-csv-errors">CSV errors</a><a href="/shopify-csv-template">CSV template</a><a href="/terms">Terms</a><a href="/privacy">Privacy</a><a href="/cookies">Cookies</a><a href="/refunds">Refunds</a><a href="/legal">Legal</a></nav>
+    </div>
+  </footer>
+</body>
+</html>

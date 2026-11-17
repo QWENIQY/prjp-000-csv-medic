@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shopify Product CSV Template: Every Column (Free Download)</title>
+  <meta name="description" content="Free Shopify product CSV template plus every column explained: required columns, variants, images, allowed values and formatting rules.">
+  <link rel="canonical" href="{{APP_URL}}/shopify-csv-template">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+  <meta name="theme-color" content="#0a8f6a">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="CSV Medic">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:title" content="Shopify product CSV template: every column explained">
+  <meta property="og:description" content="Free Shopify product CSV template plus a plain-English guide to every column, variant rows and image rows.">
+  <meta property="og:url" content="{{APP_URL}}/shopify-csv-template">
+  <meta property="og:image" content="{{APP_URL}}/img/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="article:modified_time" content="2026-11-17">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="/js/site.js" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "TechArticle",
+        "headline": "Shopify product CSV template: every column explained",
+        "description": "A free Shopify product CSV template and a plain-English guide to every column, variant rows, image rows and formatting rules.",
+        "url": "{{APP_URL}}/shopify-csv-template",
+        "datePublished": "2026-11-17",
+        "dateModified": "2026-11-17",
+        "inLanguage": "en-GB",
+        "image": "{{APP_URL}}/img/og-image.png",
+        "author": { "@id": "{{APP_URL}}/#organization" },
+        "publisher": { "@id": "{{APP_URL}}/#organization" },
+        "isPartOf": { "@id": "{{APP_URL}}/#website" },
+        "mainEntityOfPage": "{{APP_URL}}/shopify-csv-template"
+      },
+      {
+        "@type": "DigitalDocument",
+        "name": "Shopify product CSV template",
+        "encodingFormat": "text/csv",
+        "url": "{{APP_URL}}/samples/shopify-product-template.csv",
+        "isAccessibleForFree": true,
+        "publisher": { "@id": "{{APP_URL}}/#organization" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "CSV Medic", "item": "{{APP_URL}}/" },
+          { "@type": "ListItem", "position": 2, "name": "Shopify CSV template", "item": "{{APP_URL}}/shopify-csv-template" }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="/" aria-label="CSV Medic home">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#0a8f6a"/><path d="M10 6.5h8.2l5.3 5.3V25a1.5 1.5 0 0 1-1.5 1.5H10A1.5 1.5 0 0 1 8.5 25V8A1.5 1.5 0 0 1 10 6.5z" fill="#fff"/><path d="M18 6.8V12h5.2" fill="none" stroke="#0a8f6a" stroke-width="1.4"/><path d="M16 15.2v7.2M12.4 18.8h7.2" stroke="#0a8f6a" stroke-width="2.4" stroke-linecap="round"/></svg>
+        CSV Medic
+      </a>
+      <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <nav class="nav" id="site-nav" aria-label="Main">
+        <a href="/">Home</a>
+        <a href="/shopify-csv-errors">CSV errors</a>
+        <a href="/shopify-csv-template" aria-current="page">CSV template</a>
+        <a href="/#pricing">Pricing</a>
+        <a class="btn btn-primary btn-sm" href="/app">Fix my CSV</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="prose guide" id="main">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">CSV Medic</a> <span aria-hidden="true">/</span> <span>Shopify CSV template</span></nav>
+    <h1>Shopify product CSV template: every column explained</h1>
+    <p class="updated">Updated 17 November 2026 · By the CSV Medic team at QWENIQY</p>
+
+    <div class="answer-box">
+      <p><strong>Short answer:</strong> a Shopify product CSV has one header row followed by one row per variant or image. The only column you must have for new products is <code>Title</code>. Add <code>URL handle</code> to group variants and images under the same product. Save the file as <strong>UTF-8, comma-separated, with the header on row 1</strong>, using Shopify's exact column names.</p>
+      <p><a class="btn btn-primary" href="/samples/shopify-product-template.csv" download>Download the free template (.csv)</a></p>
+    </div>
+
+    <nav class="toc" aria-label="Contents">
+      <strong>Contents</strong>
+      <ol>
+        <li><a href="#rules">The 5 formatting rules</a></li>
+        <li><a href="#required">Required columns</a></li>
+        <li><a href="#rows">How rows work: products, variants and images</a></li>
+        <li><a href="#example">Example CSV</a></li>
+        <li><a href="#columns">Every column explained</a></li>
+        <li><a href="#limits">Limits to know</a></li>
+        <li><a href="#old-names">Older column names</a></li>
+      </ol>
+    </nav>
+
+    <h2 id="rules">The 5 formatting rules</h2>
+    <ol>
+      <li><strong>UTF-8 encoding.</strong> In Excel use <em>File → Save As → CSV UTF-8 (Comma delimited)</em>. In Google Sheets use <em>File → Download → Comma-separated values</em>.</li>
+      <li><strong>Commas between columns</strong>, not semicolons or tabs.</li>
+      <li><strong>Header row first</strong>, with Shopify's exact column names and no blank rows above it.</li>
+      <li><strong>Plain values</strong>: prices without currency symbols (<code>19.99</code>), lowercase <code>true</code>/<code>false</code>, weights in whole grams.</li>
+      <li><strong>Under 15 MB.</strong> Split larger catalogues into several files.</li>
+    </ol>
+
+    <h2 id="required">Required columns</h2>
+    <ul>
+      <li><strong>Adding new products:</strong> only <code>Title</code> is required. Add <code>URL handle</code> if the product has variants or more than one image.</li>
+      <li><strong>Updating existing products:</strong> <code>URL handle</code> and <code>Title</code>.</li>
+      <li><strong>Variant details</strong> (SKU, price, weight and so on): include <code>Option1 name</code> and <code>Option1 value</code>. If you leave the option columns out, Shopify deletes the existing variants and creates a single default variant.</li>
+      <li><strong>Tracked inventory:</strong> when <code>Inventory tracker</code> is <code>shopify</code>, <code>Continue selling when out of stock</code> and <code>Fulfillment service</code> can't be blank.</li>
+    </ul>
+
+    <h2 id="rows">How rows work: products, variants and images</h2>
+    <p>Shopify groups rows by <strong>URL handle</strong>. All rows that share a handle belong to one product.</p>
+    <ul>
+      <li><strong>First row of a product:</strong> all product-level details (Title, Description, Vendor, Tags, Type, Status) plus the first variant and first image.</li>
+      <li><strong>Each additional variant:</strong> a new row with the same URL handle and the variant's option values, SKU, price, inventory and so on. Leave Title, Description, Vendor and Tags <em>blank</em>.</li>
+      <li><strong>Each additional image:</strong> a row with the URL handle plus <code>Product image URL</code> and <code>Image position</code>. An image can share a row with a variant.</li>
+      <li><strong>Products with no variants:</strong> use <code>Option1 name</code> = <code>Title</code> and <code>Option1 value</code> = <code>Default Title</code>.</li>
+    </ul>
+
+    <h2 id="example">Example CSV</h2>
+    <p>A t-shirt with three variants and two images, plus a mug with no variants (shortened to the key columns):</p>
+<pre class="code-block">Title,URL handle,Option1 name,Option1 value,Option2 name,Option2 value,SKU,Price,Product image URL,Image position
+Classic Cotton T-Shirt,classic-cotton-t-shirt,Size,Small,Colour,Black,TEE-BLK-S,19.99,https://cdn.example.com/tee-front.jpg,1
+,classic-cotton-t-shirt,,Medium,,Black,TEE-BLK-M,19.99,https://cdn.example.com/tee-back.jpg,2
+,classic-cotton-t-shirt,,Small,,White,TEE-WHT-S,19.99,,
+Stoneware Coffee Mug,stoneware-coffee-mug,Title,Default Title,,,MUG-001,12.00,https://cdn.example.com/mug.jpg,1</pre>
+    <p><a href="/samples/shopify-product-template.csv" download>Download the full template</a> with all the columns below filled in for these examples.</p>
+
+    <h2 id="columns">Every column explained</h2>
+    <div class="table-wrap">
+    <table class="col-table">
+      <thead><tr><th>Column</th><th>What it does</th><th>Format / allowed values</th></tr></thead>
+      <tbody>
+        <tr><td><code>Title</code></td><td>Product name. First row of each product only.</td><td>Text, up to 255 characters. Required for new products.</td></tr>
+        <tr><td><code>URL handle</code></td><td>Unique product ID used in the product's web address. Groups variant and image rows.</td><td>Lowercase letters, numbers and hyphens; no spaces (e.g. <code>classic-cotton-t-shirt</code>).</td></tr>
+        <tr><td><code>Description</code></td><td>Product description.</td><td>Text or HTML.</td></tr>
+        <tr><td><code>Vendor</code></td><td>Brand or supplier.</td><td>Text.</td></tr>
+        <tr><td><code>Product category</code></td><td>Shopify Standard Product Taxonomy category (used for tax in some regions).</td><td>Full path (e.g. <code>Home &amp; Garden &gt; … &gt; Bed Sheets</code>) or category ID (e.g. <code>hg-15-1-2</code>).</td></tr>
+        <tr><td><code>Type</code></td><td>Your own product type label.</td><td>Free text.</td></tr>
+        <tr><td><code>Tags</code></td><td>Keywords for search and filtering.</td><td>Comma-separated in one cell; up to 250 per product.</td></tr>
+        <tr><td><code>Published on online store</code></td><td>Whether the product is visible on your online store.</td><td><code>true</code> (default) or <code>false</code>.</td></tr>
+        <tr><td><code>Status</code></td><td>Product status.</td><td><code>active</code> (default), <code>draft</code> or <code>archived</code>.</td></tr>
+        <tr><td><code>SKU</code></td><td>Stock-keeping unit for the variant.</td><td>Text. Keep each one unique.</td></tr>
+        <tr><td><code>Barcodes</code></td><td>Barcode(s) for the variant (ISBN, UPC, GTIN…).</td><td>Up to 20, separated by semicolons. Format the column as Text in Excel to avoid "5.01E+12".</td></tr>
+        <tr><td><code>Option1 name</code> / <code>Option1 value</code></td><td>First option (e.g. Size / Small). Up to three options.</td><td>Name on the first row; value on every variant row. Each combination must be unique.</td></tr>
+        <tr><td><code>Option2 …</code>, <code>Option3 …</code></td><td>Second and third options (e.g. Colour, Material).</td><td>Fill options in order: don't use Option2 without Option1.</td></tr>
+        <tr><td><code>Price</code></td><td>Variant price.</td><td>Number, no currency symbol (e.g. <code>19.99</code>).</td></tr>
+        <tr><td><code>Compare-at price</code></td><td>Original price, shown crossed out as a sale.</td><td>Number. Must be higher than Price to show as a sale.</td></tr>
+        <tr><td><code>Cost per item</code></td><td>What the item costs you (for profit reports).</td><td>Number.</td></tr>
+        <tr><td><code>Charge tax</code></td><td>Whether tax is charged.</td><td><code>true</code> (default) or <code>false</code>.</td></tr>
+        <tr><td><code>Inventory tracker</code></td><td>Who tracks stock.</td><td><code>shopify</code>, or blank for not tracked.</td></tr>
+        <tr><td><code>Inventory quantity</code></td><td>Stock on hand (single-location stores).</td><td>Whole number; default <code>0</code>.</td></tr>
+        <tr><td><code>Continue selling when out of stock</code></td><td>Allow orders at zero stock.</td><td><code>deny</code> (default) or <code>continue</code>.</td></tr>
+        <tr><td><code>Weight value (grams)</code></td><td>Shipping weight.</td><td>Whole grams, no unit (5.125 kg → <code>5125</code>).</td></tr>
+        <tr><td><code>Weight unit for display</code></td><td>Unit shown in your admin.</td><td><code>g</code>, <code>kg</code>, <code>lb</code> or <code>oz</code>.</td></tr>
+        <tr><td><code>Requires shipping</code></td><td>Physical product that needs delivering.</td><td><code>true</code> (default) or <code>false</code>.</td></tr>
+        <tr><td><code>Fulfillment service</code></td><td>Who fulfils the variant.</td><td><code>manual</code> (default) or an installed service's handle.</td></tr>
+        <tr><td><code>Product image URL</code></td><td>An image for the product. One image per row.</td><td>Public, direct <code>https://</code> link to the image file.</td></tr>
+        <tr><td><code>Image position</code></td><td>Order images appear in.</td><td>Whole numbers from <code>1</code>.</td></tr>
+        <tr><td><code>Image alt text</code></td><td>Image description for accessibility and SEO.</td><td>Up to 512 characters (125 or fewer is best).</td></tr>
+        <tr><td><code>Variant image URL</code></td><td>Image shown when this variant is selected.</td><td>Public <code>https://</code> image link.</td></tr>
+        <tr><td><code>Gift card</code></td><td>Whether the product is a gift card.</td><td><code>false</code> (default) or <code>true</code>. Gift cards can be edited but not created by CSV.</td></tr>
+        <tr><td><code>SEO title</code></td><td>Title shown in search results.</td><td>Up to 70 characters; blank uses Title.</td></tr>
+        <tr><td><code>SEO description</code></td><td>Description shown in search results.</td><td>Up to 320 characters; blank uses Description.</td></tr>
+        <tr><td>Metafield columns</td><td>Custom product data.</td><td>Header like <code>Material (product.metafields.custom.material)</code>.</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Your store may also export market-specific columns such as <code>Price / International</code> and <code>Included / International</code>. These only apply if you use Shopify Markets.</p>
+
+    <h2 id="limits">Limits to know</h2>
+    <ul>
+      <li>Up to 3 options per product and 250 images per product.</li>
+      <li>Up to 250 tags per product and 20 barcodes per variant.</li>
+      <li>SEO title up to 70 characters and SEO description up to 320.</li>
+      <li>Very large stores (500,000+ variants, excluding Shopify Plus) can create up to 10,000 new variants per day by CSV.</li>
+    </ul>
+
+    <h2 id="old-names">Older column names</h2>
+    <p>Older Shopify exports and many supplier files use the previous template's names, such as <code>Handle</code>, <code>Body (HTML)</code>, <code>Variant SKU</code>, <code>Variant Price</code>, <code>Variant Grams</code>, <code>Variant Inventory Qty</code>, <code>Variant Inventory Policy</code> and <code>Image Src</code>. Shopify still accepts these, but recommends the current names. <a href="/">CSV Medic</a> understands both, as well as common non-Shopify names like "Name", "Qty" or "RRP".</p>
+
+    <div class="cta-band guide-cta">
+      <h2>Already have a CSV that won't import?</h2>
+      <p>Upload it and CSV Medic will rename columns, fix formatting and flag the rest, in seconds. One free file a day.</p>
+      <a class="btn btn-primary btn-lg" href="/app">Fix my CSV now</a>
+    </div>
+
+    <p class="related">Related: <a href="/shopify-csv-errors">Every Shopify CSV import error explained and fixed</a> · Source: <a href="https://help.shopify.com/en/manual/products/import-export/using-csv" rel="noopener">Shopify Help Centre: using CSV files</a></p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>&copy; <span data-year>2026</span> QWENIQY. CSV Medic is not affiliated with Shopify Inc.</span>
+      <nav aria-label="Footer"><a href="/shopify-csv-errors">CSV errors</a><a href="/shopify-csv-template">CSV template</a><a href="/terms">Terms</a><a href="/privacy">Privacy</a><a href="/cookies">Cookies</a><a href="/refunds">Refunds</a><a href="/legal">Legal</a></nav>
+    </div>
+  </footer>
+</body>
+</html>

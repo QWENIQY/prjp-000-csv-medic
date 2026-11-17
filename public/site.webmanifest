@@ -1,0 +1,14 @@
+{
+  "name": "CSV Medic — Shopify CSV fixer",
+  "short_name": "CSV Medic",
+  "description": "Fix Shopify product CSV import errors in seconds.",
+  "start_url": "/app",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0a8f6a",
+  "icons": [
+    { "src": "/img/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/img/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/img/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Refund Policy — CSV Medic</title>
+  <meta name="description" content="How refunds work for CSV Medic downloads.">
+  <link rel="canonical" href="{{APP_URL}}/refunds">
+  <meta property="og:title" content="Refund Policy — CSV Medic">
+  <meta property="og:url" content="{{APP_URL}}/refunds">
+  <meta property="og:site_name" content="CSV Medic">
+  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="/js/site.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="/" aria-label="CSV Medic home">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#0a8f6a"/><path d="M10 6.5h8.2l5.3 5.3V25a1.5 1.5 0 0 1-1.5 1.5H10A1.5 1.5 0 0 1 8.5 25V8A1.5 1.5 0 0 1 10 6.5z" fill="#fff"/><path d="M18 6.8V12h5.2" fill="none" stroke="#0a8f6a" stroke-width="1.4"/><path d="M16 15.2v7.2M12.4 18.8h7.2" stroke="#0a8f6a" stroke-width="2.4" stroke-linecap="round"/></svg>
+        CSV Medic
+      </a>
+      <nav class="nav nav-simple" aria-label="Main"><a href="/">Home</a><a href="/shopify-csv-errors">CSV errors</a><a class="btn btn-primary btn-sm" href="/app">Fix my CSV</a></nav>
+    </div>
+  </header>
+  <main class="prose legal" id="main">
+    <!-- {TOKENS} are filled in by the server from .env — see LEGAL_* settings in .env.example. -->
+    <h1>Refund Policy</h1>
+    <p class="updated">Last updated: 17 November 2026</p>
+
+    <p>We want every file you buy from CSV Medic to import cleanly. This policy explains what happens if it doesn't. It sits alongside our <a href="/terms">Terms of Service</a> and doesn't affect your legal rights.</p>
+
+    <h2>Our promise</h2>
+    <p>If a file you paid for didn't work, contact us within <strong>14 days</strong> of buying it. We will fix the problem or give you a full refund. This applies, for example, when:</p>
+    <ul>
+      <li>Shopify rejects the fixed file because of something CSV Medic changed, or a problem that CSV Medic should have caught;</li>
+      <li>you paid but the download didn't unlock, or the file was empty or corrupted;</li>
+      <li>you were charged more than once for the same file.</li>
+    </ul>
+
+    <h2>What isn't covered</h2>
+    <ul>
+      <li>Problems we flagged as needing your decision (shown in red in the editor) that you didn't resolve before downloading.</li>
+      <li>Changing your mind after the file was unlocked. When you paid, you agreed to immediate supply, which ends the 14-day cancellation right for digital content. See our <a href="/terms#cancel">Terms, section 6</a>.</li>
+      <li>Results of import settings you chose in Shopify, or edits you made to the file yourself.</li>
+      <li>Free downloads, because no payment was taken.</li>
+    </ul>
+
+    <h2>Your legal rights</h2>
+    <p>If you're a consumer, you have rights under the Consumer Rights Act 2015. Digital content must be as described, fit for purpose and of satisfactory quality. If it's faulty, you're entitled to a repair or replacement. If that isn't possible, you're entitled to a price reduction, which may be a full refund. Nothing in this policy limits those rights.</p>
+
+    <h2>How to ask for a refund</h2>
+    <ol>
+      <li>Email {{CONTACT_EMAIL_LINK}} within 14 days of your purchase.</li>
+      <li>Include the email address you used at checkout, or the receipt number from Stripe's email, and tell us briefly what went wrong. If Shopify showed you an error message, a copy or screenshot of it helps.</li>
+      <li>We'll reply within 5 working days. Where we can, we'll fix your file first. If we can't, or you'd rather have your money back, we'll refund you.</li>
+    </ol>
+    <p>Refunds go back to your original payment method within 14 days of us agreeing to them. Your bank may take a few more days to show the refund.</p>
+
+    <nav class="legal-nav" aria-label="Legal documents">
+      <a href="/terms">Terms of Service</a><a href="/privacy">Privacy Policy</a><a href="/cookies">Cookie Policy</a><a href="/refunds">Refund Policy</a><a href="/legal">Legal information</a>
+    </nav>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>&copy; <span data-year>2026</span> {{LEGAL_NAME}}</span>
+      <nav aria-label="Footer"><a href="/shopify-csv-errors">CSV errors</a><a href="/shopify-csv-template">CSV template</a><a href="/terms">Terms</a><a href="/privacy">Privacy</a><a href="/cookies">Cookies</a><a href="/refunds">Refunds</a><a href="/legal">Legal</a></nav>
+    </div>
+  </footer>
+</body>
+</html>

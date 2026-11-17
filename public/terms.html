@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Terms of Service — CSV Medic</title>
+  <meta name="description" content="The terms that apply when you use CSV Medic.">
+  <link rel="canonical" href="{{APP_URL}}/terms">
+  <meta property="og:title" content="Terms of Service — CSV Medic">
+  <meta property="og:url" content="{{APP_URL}}/terms">
+  <meta property="og:site_name" content="CSV Medic">
+  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="/js/site.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="/" aria-label="CSV Medic home">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#0a8f6a"/><path d="M10 6.5h8.2l5.3 5.3V25a1.5 1.5 0 0 1-1.5 1.5H10A1.5 1.5 0 0 1 8.5 25V8A1.5 1.5 0 0 1 10 6.5z" fill="#fff"/><path d="M18 6.8V12h5.2" fill="none" stroke="#0a8f6a" stroke-width="1.4"/><path d="M16 15.2v7.2M12.4 18.8h7.2" stroke="#0a8f6a" stroke-width="2.4" stroke-linecap="round"/></svg>
+        CSV Medic
+      </a>
+      <nav class="nav nav-simple" aria-label="Main"><a href="/">Home</a><a href="/shopify-csv-errors">CSV errors</a><a class="btn btn-primary btn-sm" href="/app">Fix my CSV</a></nav>
+    </div>
+  </header>
+  <main class="prose legal" id="main">
+    <!-- {TOKENS} are filled in by the server from .env — see LEGAL_* settings in .env.example. -->
+    <h1>Terms of Service</h1>
+    <p class="updated">Last updated: 17 November 2026</p>
+    <nav class="toc" aria-label="Contents">
+      <strong>Contents</strong>
+      <ol>
+        <li><a href="#about">About these terms</a></li>
+        <li><a href="#service">The service</a></li>
+        <li><a href="#content">Your files</a></li>
+        <li><a href="#free">Free daily download</a></li>
+        <li><a href="#paid">Paid downloads and payment</a></li>
+        <li><a href="#cancel">Your right to cancel</a></li>
+        <li><a href="#faulty">If something goes wrong</a></li>
+        <li><a href="#review">Checking your file before you import it</a></li>
+        <li><a href="#use">Acceptable use</a></li>
+        <li><a href="#availability">Availability and changes to the service</a></li>
+        <li><a href="#ip">Intellectual property</a></li>
+        <li><a href="#liability">Our responsibility for loss or damage</a></li>
+        <li><a href="#privacy">Privacy</a></li>
+        <li><a href="#suspension">Suspending access</a></li>
+        <li><a href="#changes">Changes to these terms</a></li>
+        <li><a href="#disputes">Complaints, law and courts</a></li>
+        <li><a href="#general">General</a></li>
+        <li><a href="#contact">Contact us</a></li>
+      </ol>
+    </nav>
+
+    <h2 id="about">1. About these terms</h2>
+    <p>These terms of service ("Terms") apply when you use CSV Medic at this website (the "Service"). CSV Medic is a trading name of {{LEGAL_NAME}} ("we", "us", "our"), company number {{COMPANY_NUMBER}}, whose registered office is at {{REGISTERED_ADDRESS}}. You can contact us at {{CONTACT_EMAIL_LINK}}.</p>
+    <p>By uploading a file or downloading a fixed file you agree to these Terms. If you don't agree, please don't use the Service. Please also read our <a href="/privacy">Privacy Policy</a>, <a href="/cookies">Cookie Policy</a> and <a href="/refunds">Refund Policy</a>, which form part of these Terms.</p>
+    <p><strong>Consumers and businesses.</strong> Most of our customers use CSV Medic for their business. Some parts of these Terms apply differently depending on whether you are a <em>consumer</em> (an individual acting wholly or mainly outside your trade, business, craft or profession) or a <em>business</em>. Where that is the case we say so. If you are a consumer, nothing in these Terms affects your legal rights under the Consumer Rights Act 2015 or other consumer law.</p>
+
+    <h2 id="service">2. The service</h2>
+    <p>CSV Medic checks Shopify product CSV files for problems, automatically repairs many of them, highlights issues that need your decision, lets you edit the data in your browser, and lets you download the fixed file.</p>
+    <ul>
+      <li>No account is needed. Your files are linked to the browser you used, through a cookie (see our <a href="/cookies">Cookie Policy</a>).</li>
+      <li>Files must be Shopify product CSV files of up to 15 MB. Other files may not work as expected.</li>
+      <li>CSV Medic is an independent product. It is <strong>not affiliated with, endorsed by or sponsored by Shopify Inc.</strong> "Shopify" is a trade mark of Shopify Inc.</li>
+    </ul>
+
+    <h2 id="content">3. Your files</h2>
+    <p><strong>You keep ownership.</strong> Everything in the files you upload ("Your Content") stays yours. You give us a limited, non-exclusive permission to store, process and change Your Content only as needed to provide the Service to you. We don't use Your Content for any other purpose, and we don't sell it or share it except as described in our <a href="/privacy">Privacy Policy</a>.</p>
+    <p><strong>Your responsibilities.</strong> You confirm that you have the right to upload Your Content, and that it does not break the law or anyone else's rights. Product files rarely need to contain personal data, so please don't include personal information (such as customer details) in your files. If you do, you are responsible for having a lawful basis to share it with us.</p>
+    <p><strong>How long we keep it.</strong> Files are processed in memory while you review and edit them. When you choose to download, we store the fixed file for up to {{EXPORT_TTL_HOURS}} hours so that it can be delivered to you, and then delete it permanently. <strong>Download your file promptly and keep your own copy.</strong> Always keep a copy of your original file too.</p>
+
+    <h2 id="free">4. Free daily download</h2>
+    <p>Each person may download {{FREE_PER_DAY}} fixed file free of charge per day. The allowance resets at midnight UK time. Reviewing and editing files is always free.</p>
+    <p>To apply this limit fairly we use a cookie and a one-way hashed (scrambled) version of your IP address, as explained in our <a href="/privacy">Privacy Policy</a>. Because people can share an internet connection (for example in an office), someone else on your network may use the free download before you. If that happens you can buy the file or try again the next day.</p>
+    <p>You must not try to get around the limit, for example by automating requests or repeatedly changing your IP address or browser in order to obtain more free downloads. The free allowance is offered at our discretion. We may change it or withdraw it at any time, but this won't affect a file you have already downloaded.</p>
+
+    <h2 id="paid">5. Paid downloads and payment</h2>
+    <ul>
+      <li><strong>Price.</strong> Each additional fixed file costs {{PRICE}} as a one-time payment. There is no subscription. The price is shown on the download page before you pay and includes VAT where applicable.</li>
+      <li><strong>What you are buying.</strong> One payment unlocks the download of one specific fixed file, in the browser you used, for the remaining storage period (up to {{EXPORT_TTL_HOURS}} hours). If you change the file afterwards and want to download the new version, that counts as a new file.</li>
+      <li><strong>Payment.</strong> Payments are processed securely by Stripe Payments UK Ltd. We never see or store your full card details. You can pay with the methods shown at checkout, such as card, Apple Pay or Google Pay.</li>
+      <li><strong>When the contract is made.</strong> Our contract with you for a paid download is formed when your payment is confirmed. We then unlock your file straight away.</li>
+      <li><strong>Receipts.</strong> Stripe will email a receipt to the address you give at checkout. Keep it in case you need to contact us.</li>
+      <li><strong>Price changes.</strong> We may change our prices at any time. A change won't affect a purchase you have already completed.</li>
+      <li><strong>Pricing errors.</strong> If we discover a clear pricing error before your payment is confirmed, we'll tell you and won't take the payment.</li>
+    </ul>
+
+    <h2 id="cancel">6. Your right to cancel (consumers)</h2>
+    <p>If you are a consumer, you normally have 14 days to cancel a contract for digital content bought online. However, a fixed CSV file is digital content supplied immediately. <strong>Before you pay we ask you to confirm that you want the file supplied immediately, and that you understand you will lose your right to cancel once it is unlocked.</strong> This is allowed under regulation 37 of the Consumer Contracts (Information, Cancellation and Additional Charges) Regulations 2013. Your confirmation is recorded with your payment.</p>
+    <p>Losing the right to cancel does not affect your rights if the file is faulty. See <a href="#faulty">section 7</a> and our <a href="/refunds">Refund Policy</a>.</p>
+    <p>If you are a business, the statutory right to cancel does not apply to you.</p>
+
+    <h2 id="faulty">7. If something goes wrong</h2>
+    <p><strong>Your legal rights (consumers).</strong> Under the Consumer Rights Act 2015, digital content must be as described, fit for purpose and of satisfactory quality. If a fixed file you paid for is faulty, you are entitled to a repair or a replacement. If we can't repair or replace it within a reasonable time and without significant inconvenience to you, you are entitled to a price reduction, which may be a full refund. For detailed information, visit the Citizens Advice website or call 0808 223 1133.</p>
+    <p><strong>Our promise (everyone).</strong> If CSV Medic didn't work for a file you paid for, contact us within 14 days and we will fix the problem or refund you. The <a href="/refunds">Refund Policy</a> explains how.</p>
+
+    <h2 id="review">8. Checking your file before you import it</h2>
+    <p>CSV Medic follows Shopify's published product CSV format and is built to produce a file Shopify will accept. However:</p>
+    <ul>
+      <li>Some problems can't be fixed automatically and need your decision. We highlight these as issues that need you. If you download a file that still contains them, Shopify may reject those rows.</li>
+      <li>Shopify can change its import requirements at any time. Your store may also have settings or apps that affect an import.</li>
+      <li>Automatic fixes are based on reasonable assumptions about your data, such as how a price was written. Please check the list of changes in the editor.</li>
+    </ul>
+    <p>Before importing, review the changes and keep a backup of your original file and your store's product data. When you import into Shopify, choose the import options (such as overwriting products with matching handles) carefully. After importing, check your products. You decide what to import into your store.</p>
+
+    <h2 id="use">9. Acceptable use</h2>
+    <p>You must not:</p>
+    <ul>
+      <li>use the Service for anything unlawful or fraudulent, or upload content that is unlawful, harmful or infringes anyone's rights;</li>
+      <li>upload malware, or attempt to probe, scan, test or break the security of the Service;</li>
+      <li>attempt to access files that belong to anyone else;</li>
+      <li>overload the Service, or use bots, scrapers or other automated means beyond normal use of the website;</li>
+      <li>get around the free download limit, payment or any other access restriction;</li>
+      <li>copy, resell or provide the Service to others as your own, or reverse engineer it except where the law allows.</li>
+    </ul>
+    <p>If you find a security vulnerability, please report it responsibly to us (see our <a href="/legal#security">security notice</a>).</p>
+
+    <h2 id="availability">10. Availability and changes to the service</h2>
+    <p>We aim to keep the Service available and working well, but we can't promise it will always be available or free of errors. We may need to suspend it for maintenance or for reasons outside our control. We may change, improve or stop offering features. If we stop offering the Service, you will still be able to download any file you have already paid for, for its remaining storage period. If that isn't possible, we will refund you.</p>
+
+    <h2 id="ip">11. Intellectual property</h2>
+    <p>We, or our licensors, own the Service, the website, the software, the CSV Medic name and logo, and all related intellectual property. These Terms don't transfer any of it to you. You may use the Service only as these Terms allow. Your Content stays yours (see <a href="#content">section 3</a>). If you send us feedback or suggestions, we may use them freely and without any obligation to you.</p>
+
+    <h2 id="liability">12. Our responsibility for loss or damage</h2>
+    <p><strong>What we never limit.</strong> Nothing in these Terms excludes or limits our liability for:</p>
+    <ul>
+      <li>death or personal injury caused by our negligence;</li>
+      <li>fraud or fraudulent misrepresentation;</li>
+      <li>any liability that cannot be excluded or limited by law, including your statutory rights as a consumer.</li>
+    </ul>
+    <p><strong>If you are a consumer.</strong> We are responsible for loss or damage you suffer that is a foreseeable result of our breaking these Terms or failing to use reasonable care and skill. We are not responsible for loss or damage that was not foreseeable. We provide the Service for domestic and private use. If you use it for a business, we have no liability to you for any loss of profit, loss of business, business interruption or loss of business opportunity. If digital content we supply damages a device or other digital content belonging to you because we did not use reasonable care and skill, we will either repair the damage or pay you compensation.</p>
+    <p><strong>If you are a business.</strong> To the extent allowed by law:</p>
+    <ul>
+      <li>We exclude all implied conditions, warranties, representations and other terms that might apply to the Service.</li>
+      <li>We are not liable for any loss of profits, sales, business or revenue, business interruption, loss of anticipated savings, loss of or damage to data, loss of business opportunity, goodwill or reputation, or any indirect or consequential loss.</li>
+      <li>We are not liable for loss caused by your import into Shopify, including any changes to or loss of existing product data in your store, where it results from importing a file without reviewing it as described in <a href="#review">section 8</a>.</li>
+      <li>Our total liability to you arising out of or in connection with these Terms, whether in contract, tort (including negligence) or otherwise, is limited to the greater of £100 or the total amount you paid us in the 12 months before the event giving rise to the claim.</li>
+    </ul>
+
+    <h2 id="privacy">13. Privacy</h2>
+    <p>We use any personal data you give us as described in our <a href="/privacy">Privacy Policy</a>.</p>
+
+    <h2 id="suspension">14. Suspending access</h2>
+    <p>We may block or limit your access to the Service if we reasonably believe you have seriously or repeatedly broken these Terms, particularly <a href="#use">section 9</a>. Where we can, we will tell you. If we end access to a file you paid for because you broke these Terms, you are not entitled to a refund except where the law requires one.</p>
+
+    <h2 id="changes">15. Changes to these terms</h2>
+    <p>We may update these Terms from time to time, for example to reflect changes in the law or in the Service. The version on this page when you buy a file applies to that purchase. If we make important changes, we'll highlight them on the website.</p>
+
+    <h2 id="disputes">16. Complaints, law and courts</h2>
+    <p>If you have a complaint, please contact us first at {{CONTACT_EMAIL_LINK}}. We'll try to resolve it quickly, and aim to reply within 5 working days.</p>
+    <p>These Terms are governed by the law of England and Wales. If you are a consumer, you can bring legal proceedings in the courts of England and Wales. If you live in Scotland, you can also bring them in Scotland. If you live in Northern Ireland, you can also bring them in Northern Ireland. If you are a business, the courts of England and Wales have exclusive jurisdiction over any dispute, including non-contractual disputes.</p>
+
+    <h2 id="general">17. General</h2>
+    <ul>
+      <li><strong>Transfer.</strong> We may transfer our rights and obligations under these Terms to another organisation, and will make sure this doesn't reduce your rights. You may only transfer yours with our written agreement.</li>
+      <li><strong>Third parties.</strong> No one other than you and us has any right to enforce these Terms (Contracts (Rights of Third Parties) Act 1999).</li>
+      <li><strong>Severability.</strong> If a court finds part of these Terms invalid, the rest continues to apply.</li>
+      <li><strong>No waiver.</strong> If we delay enforcing these Terms, we can still enforce them later.</li>
+      <li><strong>Events outside our control.</strong> We are not responsible for delays or failures caused by events outside our reasonable control. If one affects a file you paid for, we'll refund you if we can't deliver it.</li>
+    </ul>
+
+    <h2 id="contact">18. Contact us</h2>
+    <p>{{LEGAL_NAME}} (trading as CSV Medic)<br>{{REGISTERED_ADDRESS}}<br>Email: {{CONTACT_EMAIL_LINK}}</p>
+
+    <nav class="legal-nav" aria-label="Legal documents">
+      <a href="/terms">Terms of Service</a><a href="/privacy">Privacy Policy</a><a href="/cookies">Cookie Policy</a><a href="/refunds">Refund Policy</a><a href="/legal">Legal information</a>
+    </nav>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>&copy; <span data-year>2026</span> {{LEGAL_NAME}}</span>
+      <nav aria-label="Footer"><a href="/shopify-csv-errors">CSV errors</a><a href="/shopify-csv-template">CSV template</a><a href="/terms">Terms</a><a href="/privacy">Privacy</a><a href="/cookies">Cookies</a><a href="/refunds">Refunds</a><a href="/legal">Legal</a></nav>
+    </div>
+  </footer>
+</body>
+</html>

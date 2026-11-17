@@ -1,0 +1,46 @@
+# Render Blueprint — https://render.com/docs/blueprint-spec
+# In Render: New → Blueprint → pick this repo. You'll be asked for the values marked `sync: false`.
+services:
+  - type: web
+    name: csv-medic
+    runtime: node
+    plan: starter            # needed for the persistent disk (free instances have no disk and go to sleep)
+    region: frankfurt        # closest Render region to the UK
+    buildCommand: npm ci --omit=dev
+    startCommand: npm start
+    healthCheckPath: /healthz
+    disk:
+      name: data
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: NODE_VERSION
+        value: "24"
+      - key: DB_PATH
+        value: /var/data/csvmedic.db
+      - key: TRUST_PROXY
+        value: "1"
+      - key: IP_HASH_SECRET
+        generateValue: true  # created once by Render and kept stable
+      - key: HOSTING_PROVIDER
+        value: Render Services, Inc.
+      - key: HOSTING_LOCATION
+        value: the European Union (Frankfurt, Germany)
+      - key: APP_URL          # e.g. https://csvmedic.co.uk  (or the .onrender.com URL to start with)
+        sync: false
+      - key: STRIPE_SECRET_KEY
+        sync: false
+      - key: STRIPE_WEBHOOK_SECRET
+        sync: false
+      - key: LEGAL_NAME
+        sync: false
+      - key: COMPANY_NUMBER
+        sync: false
+      - key: REGISTERED_ADDRESS
+        sync: false
+      - key: CONTACT_EMAIL
+        sync: false
+      - key: VAT_NUMBER
+        sync: false
+      - key: ICO_NUMBER
+        sync: false
