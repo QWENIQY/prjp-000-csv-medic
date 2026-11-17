@@ -59,6 +59,15 @@ so the download is instant even if the webhook is delayed.
 
 ## Deploying
 
+**Free option (Render free plan, uses `render.yaml`):** push to GitHub, then in Render choose New → Blueprint → this repo.
+Limits of the free plan:
+- The site sleeps after 15 minutes without visitors, so the first visit after that takes 30–60 seconds.
+- There is no permanent disk, so the database resets whenever the site restarts or redeploys. Free-download counters reset, and prepared downloads not yet downloaded are lost.
+
+To fix both, switch `plan` to `starter` and uncomment the disk in `render.yaml` (about $7/month).
+
+**Any other host:**
+
 Any Node host with a persistent disk works (Render, Railway, Fly.io, a VPS). Set:
 
 ```

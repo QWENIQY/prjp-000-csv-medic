@@ -4,20 +4,21 @@ services:
   - type: web
     name: csv-medic
     runtime: node
-    plan: starter            # needed for the persistent disk (free instances have no disk and go to sleep)
+    plan: free               # free: sleeps after 15 min idle and has no permanent disk (see README)
+                             # upgrade later to `starter` and uncomment the disk below to keep data across restarts
     region: frankfurt        # closest Render region to the UK
     buildCommand: npm ci --omit=dev
     startCommand: npm start
     healthCheckPath: /healthz
-    disk:
-      name: data
-      mountPath: /var/data
-      sizeGB: 1
+    # disk:
+    #   name: data
+    #   mountPath: /var/data
+    #   sizeGB: 1
     envVars:
       - key: NODE_VERSION
         value: "24"
-      - key: DB_PATH
-        value: /var/data/csvmedic.db
+      # - key: DB_PATH            # only with the disk above
+      #   value: /var/data/csvmedic.db
       - key: TRUST_PROXY
         value: "1"
       - key: IP_HASH_SECRET
