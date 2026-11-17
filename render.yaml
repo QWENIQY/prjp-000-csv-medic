@@ -3,31 +3,31 @@
 services:
   - type: web
     name: csv-medic
-    runtime: node
+    runtime: python
     plan: free               # free: sleeps after 15 min idle and has no permanent disk (see README)
                              # upgrade later to `starter` and uncomment the disk below to keep data across restarts
     region: frankfurt        # closest Render region to the UK
-    buildCommand: npm ci --omit=dev
-    startCommand: npm start
+    buildCommand: pip install -r requirements.txt
+    startCommand: python3 run.py
     healthCheckPath: /healthz
     # disk:
     #   name: data
     #   mountPath: /var/data
     #   sizeGB: 1
     envVars:
-      - key: NODE_VERSION
-        value: "24"
+      - key: CSVMEDIC_NO_VENV   # Render installs requirements itself, so run.py skips creating .venv
+        value: "1"
       # - key: DB_PATH            # only with the disk above
       #   value: /var/data/csvmedic.db
       - key: TRUST_PROXY
         value: "1"
       - key: IP_HASH_SECRET
-        generateValue: true  # created once by Render and kept stable
+        generateValue: true     # created once by Render and kept stable
       - key: HOSTING_PROVIDER
         value: Render Services, Inc.
       - key: HOSTING_LOCATION
         value: the European Union (Frankfurt, Germany)
-      - key: APP_URL          # e.g. https://csvmedic.co.uk  (or the .onrender.com URL to start with)
+      - key: APP_URL            # e.g. https://csv-medic.onrender.com, later your own domain
         sync: false
       - key: STRIPE_SECRET_KEY
         sync: false
